@@ -15,8 +15,8 @@ body header {
   background-color: #E5E5E5;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (3)[1fr];
-      grid-template-columns: repeat(1fr, 3);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas: "item1 . item2";
 }
 
@@ -74,5 +74,65 @@ body header .item2 ul a li {
 body header .item2 ul a li:hover, body header .item2 ul a li.active {
   background-color: #f5f3f3;
   color: #DD914B;
+}
+
+body .content {
+  padding-top: 25px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+body .content .post {
+  margin: .5rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .content .post h2 {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: .3rem;
+}
+
+body .content .post p {
+  padding: 1rem;
+}
+
+body .content .post img {
+  margin: .3rem;
+}
+
+@media only screen and (max-width: 800px) {
+  body .content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 600px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body .content {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
